@@ -219,7 +219,7 @@ def update_umap(selected_dataset, selected_genera):
 
     # Add images to the UMAP plot (only for selected genera)
     for _, row in df_umap_filtered.iterrows():
-        img_path = f'assets/{row["Image_Name"]}'  # Adjust path based on your image directory
+        img_path = f'assets/assets/{row["Image_Name"]}'  # Adjust path based on your image directory
         if os.path.exists(img_path):
             fig.add_layout_image(
                 dict(

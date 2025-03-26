@@ -16,7 +16,7 @@ import zipfile
 
 
 # Path to the zip file
-zip_file_path = 'assets.zip'  # Replace with the correct path to your zip file
+zip_file_path = 'assets_resized.zip'  # Replace with the correct path to your zip file
 assets = 'assets'  # This is where you want to extract the files
 
 # Check if the assets directory already exists (to avoid re-extraction every time)

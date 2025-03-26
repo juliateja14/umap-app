@@ -135,6 +135,7 @@ umap_dict = {
 
 # Initialize Dash app
 app = dash.Dash(__name__)
+server = app.server 
 
 # Get unique genera for the checklist and sort them alphabetically
 unique_genera = sorted(df_umap_1['genus'].unique())  # Sort genera alphabetically

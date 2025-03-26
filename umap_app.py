@@ -249,12 +249,9 @@ def update_umap(selected_dataset, selected_genera):
     return fig, selected_genera
 
 if __name__ == '__main__':
-    pass
-    # Get the PORT from environment variables (Render automatically sets it)
-    #port = int(os.environ.get('PORT', 8080))
-    
-    # Run the Dash app on host 0.0.0.0 
-   # app.run_server(debug=False, host='0.0.0.0', port=port)
+    port = int(os.environ.get("PORT", 8080))
+    app.run_server(debug=False, host='0.0.0.0', port=port)
+   
  
 
   

@@ -12,24 +12,6 @@ import matplotlib.pyplot as plt
 import plotly.express as px
 import os
 import gunicorn
-import zipfile
-
-
-# Path to the zip file
-zip_file_path = 'assets.zip'  # Replace with the correct path to your zip file
-assets_dir = 'assets'  # This is where you want to extract the files
-
-# Check if the assets directory already exists (to avoid re-extraction every time)
-if not os.path.exists(assets_dir):
-    os.makedirs(assets_dir)
-
-# Extract the ZIP file if not already extracted
-if zip_file_path.endswith('.zip'):
-    with zipfile.ZipFile(zip_file_path, 'r') as zip_ref:
-        zip_ref.extractall(assets_dir)  # Extract files into the 'assets' folder
-    print(f"Extracted {zip_file_path} to {assets_dir}")
-else:
-    print(f"{zip_file_path} is not a zip file.")
 
 
 
@@ -121,7 +103,7 @@ X_all_s_normalized = scaler.fit_transform(X_all_s)
 
 # Function to create UMAP embeddings
 def generate_umap(X_normalized):
-    umap_reducer = umap.UMAP(n_components=2)
+    umap_reducer = umap.UMAP(n_components=2, random_state=42)
     embedding = umap_reducer.fit_transform(X_normalized)
     
     df_umap = pd.DataFrame(embedding, columns=['UMAP_1', 'UMAP_2'])

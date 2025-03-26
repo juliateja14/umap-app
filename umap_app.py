@@ -230,4 +230,4 @@ def update_umap(selected_dataset, selected_genera):
 
   
 if __name__ == "__main__":
-    app.run_server(debug=True, port=6056) 
+  app.run_server(debug=False, host="0.0.0.0", port=6056)

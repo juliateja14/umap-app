@@ -32,7 +32,7 @@ else:
     print(f"{zip_file_path} is not a zip file.")
 
 
-def resize_images(directory, max_size=(300, 300)):  # Adjust size as needed
+def resize_images(directory, max_size=(100, 100)): 
     for filename in os.listdir(directory):
         if filename.lower().endswith(('.png', '.jpg', '.jpeg')):  # Only process images
             img_path = os.path.join(directory, filename)

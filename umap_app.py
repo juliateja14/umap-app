@@ -45,7 +45,7 @@ def resize_images(directory, max_size=(100, 100)):
                 print(f"Error resizing {filename}: {e}")
 
 # Resize images after extracting the ZIP file
-resize_images(assets)
+resize_images('assets/assets')
 
 
 # Load feature data

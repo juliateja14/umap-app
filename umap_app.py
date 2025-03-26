@@ -156,7 +156,6 @@ umap_dict = {
 app = dash.Dash(__name__)
 server = app.server 
 
-#port = int(os.environ.get('PORT', 8080))
 
 # Get unique genera for the checklist and sort them alphabetically
 unique_genera = sorted(df_umap_1['genus'].unique())  # Sort genera alphabetically
@@ -248,10 +247,7 @@ def update_umap(selected_dataset, selected_genera):
 
     return fig, selected_genera
 
-if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 8080))
-    app.run_server(debug=False, host='0.0.0.0', port=port)
-   
- 
-
   
+if __name__ == "__main__":
+  pass
+  #app.run_server(debug=False, host="0.0.0.0", port=6056)

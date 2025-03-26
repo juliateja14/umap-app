@@ -17,17 +17,17 @@ import zipfile
 
 # Path to the zip file
 zip_file_path = 'assets.zip'  # Replace with the correct path to your zip file
-assets_dir = 'assets'  # This is where you want to extract the files
+assets = 'assets'  # This is where you want to extract the files
 
 # Check if the assets directory already exists (to avoid re-extraction every time)
-if not os.path.exists(assets_dir):
-    os.makedirs(assets_dir)
+if not os.path.exists(assets):
+    os.makedirs(assets)
 
 # Extract the ZIP file if not already extracted
 if zip_file_path.endswith('.zip'):
     with zipfile.ZipFile(zip_file_path, 'r') as zip_ref:
-        zip_ref.extractall(assets_dir)  # Extract files into the 'assets' folder
-    print(f"Extracted {zip_file_path} to {assets_dir}")
+        zip_ref.extractall(assets)  # Extract files into the 'assets' folder
+    print(f"Extracted {zip_file_path} to {assets}")
 else:
     print(f"{zip_file_path} is not a zip file.")
 

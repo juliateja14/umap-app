@@ -32,6 +32,21 @@ else:
     print(f"{zip_file_path} is not a zip file.")
 
 
+def resize_images(directory, max_size=(300, 300)):  # Adjust size as needed
+    for filename in os.listdir(directory):
+        if filename.lower().endswith(('.png', '.jpg', '.jpeg')):  # Only process images
+            img_path = os.path.join(directory, filename)
+            try:
+                img = Image.open(img_path)
+                img.thumbnail(max_size)  # Resize while keeping aspect ratio
+                img.save(img_path, optimize=True)  # Overwrite with optimized image
+                print(f"Resized {filename}")
+            except Exception as e:
+                print(f"Error resizing {filename}: {e}")
+
+# Resize images after extracting the ZIP file
+resize_images(assets)
+
 
 # Load feature data
 features_no_scale = pd.read_csv("feature_table_no_scale_1203.csv")

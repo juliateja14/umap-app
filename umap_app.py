@@ -103,7 +103,7 @@ X_all_s_normalized = scaler.fit_transform(X_all_s)
 
 # Function to create UMAP embeddings
 def generate_umap(X_normalized):
-    umap_reducer = umap.UMAP(n_components=2, random_state=42)
+    umap_reducer = umap.UMAP(n_components=2)
     embedding = umap_reducer.fit_transform(X_normalized)
     
     df_umap = pd.DataFrame(embedding, columns=['UMAP_1', 'UMAP_2'])
@@ -229,7 +229,12 @@ def update_umap(selected_dataset, selected_genera):
 
     return fig, selected_genera
 
+if __name__ == '__main__':
+    # Get the PORT from environment variables (Render automatically sets it)
+    port = int(os.environ.get('PORT', 6056))  
+    
+    # Run the Dash app on host 0.0.0.0 
+    app.run_server(debug=False, host='0.0.0.0', port=port)
+ 
+
   
-if __name__ == "__main__":
-  pass
-  #app.run_server(debug=False, host="0.0.0.0", port=6056)

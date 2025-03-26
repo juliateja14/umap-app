@@ -45,7 +45,7 @@ def resize_images(directory, max_size=(100, 100)):
                 print(f"Error resizing {filename}: {e}")
 
 # Resize images after extracting the ZIP file
-resize_images('assets/assets')
+#resize_images('assets/assets')
 
 
 # Load feature data
@@ -234,7 +234,7 @@ def update_umap(selected_dataset, selected_genera):
 
     # Add images to the UMAP plot (only for selected genera)
     for _, row in df_umap_filtered.iterrows():
-        img_path = f'assets/assets/{row["Image_Name"]}'  # Adjust path based on your image directory
+        img_path = f'assets/{row["Image_Name"]}'  # Adjust path based on your image directory
         if os.path.exists(img_path):
             fig.add_layout_image(
                 dict(
